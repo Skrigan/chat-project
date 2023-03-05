@@ -8,8 +8,8 @@ import {Observable} from "rxjs";
 export class ChatService {
 
   private socket: Socket;
-  private url = 'http://localhost:3000';
-  // private url = '' //global link
+  // private url = 'http://localhost:3000'; //local link
+  private url = 'https://chat-project-production-55c5.up.railway.app/' //global link
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});

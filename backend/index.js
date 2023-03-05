@@ -14,12 +14,14 @@ server.listen(PORT, () => {
 });
 
 io.on('connection', (socket) => {
+    console.log('connection');
     socket.on('join', (data) => {
         socket.join(data.room);
         socket.broadcast.to(data.room).emit('user joined');
     })
 
     socket.on('message', (data) => {
+        console.log(`message: ${data}`)
         io.in(data.room).emit('new message', {user: data.user, message: data.message});
     })
 })
