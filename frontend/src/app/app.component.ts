@@ -93,7 +93,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   openPopup(content: any): void {
-    this.modalService.open(content, {backdrop: 'static', centered: true});
+    this.modalService.open(content, {centered: true});
   }
 
   login(dismiss: any) {
